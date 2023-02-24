@@ -13,14 +13,10 @@ public class BusquedaServices extends ActionManager {
     public static void navegadorWeb(){
         navigateTo(PropertyManager.getProperty("web.base.url"));
     }
-
     public static void busqueda(String text) {
         setInput(BusquedaConstants.BUSQUEDA, text + Keys.ENTER);
     }
-
     public static void resultados(String juego){
-        //String nueva = juego + "123";
-        //Assert.assertEquals(WebActionManager.getElement(ProyectoBasicoConstants.RESULTADO).getAttribute("value"),(juego));
         Assert.assertTrue(WebActionManager.isPresent(String.format(BusquedaConstants.RESULTADO_FORMAT,juego)));
     }
 
